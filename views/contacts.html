@@ -1,0 +1,28 @@
+<div class="container">
+  <div class="panel panel-primary">
+    <div class="panel-heading">Contact Details</div>
+    <div class="panel-body">
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Age</th>
+            <th>Contact Number</th>
+            <th><a href="#/Add"><i class="fa fa-plus-circle"></i></a></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr ng-repeat="person in persons">
+            <td>{{person.name}}</td>
+            <td>{{person.email}}</td>
+            <td>{{person.age}}</td>
+            <td>{{person.mobile}}</td>
+            <td><a href="#/Edit"><i class="fa fa-edit"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
