@@ -4,27 +4,15 @@
 	<title>CRUD APPLICATION</title>
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 	<div id="wrapper">
-		<div class="container">
-			<div id="nav">
-				<div class="navbar navbar-primary navbar-inverse">
-					<div class="container-fluid">
-						<div class="navbar-header">
-							<a href="#" class="navbar-brand">Contact Management App</a>
-						</div>
-					
-						<ul class="nav navbar-nav">
-							<li><a href="#Contacts">Contacts</a></li>
-							<li><a href="#Add">Add Contacts</a></li>
-							<li><a href="#Edit">Update</a></li>
-						</ul>
-					</div>
-				</div>
-			</div>
-		</div>
+		
 		<div ng-controller="MainCtrl">
+			<div class="container">
+				<h1 class="title">{{title}}</h1>
+			</div>
 			<div ng-view></div>
 		</div>
 		

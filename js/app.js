@@ -20,6 +20,7 @@ app.config(['$routeProvider', function($routeProvider){
 }]);
 
 app.controller('MainCtrl', ['$scope',function($scope){
+	$scope.title = "Contact Management"
 	$scope.persons = [
 		{
 			'name':'Senthil',
@@ -38,7 +39,12 @@ app.controller('MainCtrl', ['$scope',function($scope){
 
 	];
 
-	$scope.updatePersons = [];
+	//$scope.updatePersons = [];
+	$scope.editing = false;
+
+		$scope.editItem = function(index){
+			 $scope.editing = $scope.persons.indexOf(index);	   
+		}
 }]);
 
 app.controller('ContactsCtrl', ['$scope',function($scope){
@@ -67,8 +73,8 @@ app.controller('EditCtrl', ['$scope','$location' , function($scope, $location) {
 		$location.path('/');
 	};
 
-	$scope.edit = function(persons){
-		$scope.updatePersons[persons.id] = true;
+	$scope.editItem = function(index){ 
+		//$scope.updatePersons[persons.id] = true;
 		$scope.editmode = true;
     	$scope.name = angular.copy($scope.currentrow);
 	};

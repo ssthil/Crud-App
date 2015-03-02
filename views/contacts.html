@@ -9,16 +9,30 @@
             <th>Email</th>
             <th>Age</th>
             <th>Contact Number</th>
-            <th><a href="#/Add"><i class="fa fa-plus-circle"></i></a></th>
+            <th><a href="#/Add" class="btn btn-success btn-circle"><i class="fa fa-plus-circle"></i></a></th>
           </tr>
         </thead>
         <tbody>
           <tr ng-repeat="person in persons">
-            <td>{{person.name}}</td>
-            <td>{{person.email}}</td>
-            <td>{{person.age}}</td>
-            <td>{{person.mobile}}</td>
-            <td><a href="#/Edit"><i class="fa fa-edit"></i></a>
+            <td>
+              <span ng-hide="editMode">{{person.name}}</span>
+              <input type="text" ng-show="editMode" ng-model="person.name">
+            </td>
+            <td>
+              <span ng-hide="editMode">{{person.email}}</span>
+              <input type="text" ng-show="editMode" ng-model="person.email">
+            </td>
+            <td>
+              <span ng-hide="editMode">{{person.age}}</span>
+              <input type="text" ng-show="editMode" ng-model="person.age">
+            </td>
+            <td>
+              <span ng-hide="editMode">{{person.mobile}}</span>
+              <input type="text" ng-show="editMode" ng-model="person.mobile">
+            </td>
+            <td>
+              <button type="submit" ng-hide="editMode" ng-click="editMode = true;editItem(item)" class="btn btn-primary btn-circle"><i class="fa fa-edit"></i></button>
+              <button type="submit" ng-show="editMode" ng-click="editMode = false;" class="btn btn-primary">Save</button>
             </td>
           </tr>
         </tbody>
